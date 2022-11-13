@@ -74,6 +74,20 @@ AddressBook.prototype.assignId = function() {
     return this.currentId;
   };
 
+// assign a unique id
+AddressBook.prototype.addContact = function(contact) {
+    contact.id = this.assignId();
+    this.contacts[contact.id] = contact;
+  };
+
+//   finding contats
+AddressBook.prototype.findContact = function(id) {
+    if (this.contacts[id] != undefined) {
+      return this.contacts[id];
+    }
+    return false;
+  };
+
 
   // Business Logic for Contacts ---------
 function Contact(firstName, lastName, phoneNumber) {
