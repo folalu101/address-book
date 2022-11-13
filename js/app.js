@@ -68,11 +68,6 @@ function AddressBook() {
     this.currentId = 0;
   }
 
-//   prototype tp assign a unique id to each contact
-AddressBook.prototype.assignId = function() {
-    this.currentId += 1;
-    return this.currentId;
-  };
 
 // assign a unique id
 AddressBook.prototype.addContact = function(contact) {
@@ -80,6 +75,12 @@ AddressBook.prototype.addContact = function(contact) {
     this.contacts[contact.id] = contact;
   };
 
+  //   prototype tp assign a unique id to each contact
+AddressBook.prototype.assignId = function() {
+    this.currentId += 1;
+    return this.currentId;
+  };
+  
 //   finding contats
 AddressBook.prototype.findContact = function(id) {
     if (this.contacts[id] != undefined) {
@@ -88,6 +89,14 @@ AddressBook.prototype.findContact = function(id) {
     return false;
   };
 
+//   deleting contact
+AddressBook.prototype.deleteContact = function(id) {
+    if (this.contacts[id] === undefined) {
+      return false;
+    }
+    delete this.contacts[id];
+    return true;
+  };
 
   // Business Logic for Contacts ---------
 function Contact(firstName, lastName, phoneNumber) {
