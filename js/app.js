@@ -34,19 +34,55 @@
 // add prototype to find a contact to edit contact
 
 // new address book constrctor
+
+
+
+
+
 //  Business Logic for AddressBook ---------
-function AddressBook() {
-  this.contacts = {};
-}
+// function AddressBook() {
+//   this.contacts = {};
+// }
+
+// prototype to save a new contact
+// AddressBook.prototype.addContact = function(contact) {
+//     this.contacts[contact.firstName] = contact;
+//   };
 
 // Business Logic for Contacts ---------
-function Contact(firstName, lastName, phoneNumber) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.phoneNumber = phoneNumber;
-}
+// function Contact(firstName, lastName, phoneNumber) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.phoneNumber = phoneNumber;
+// }
 
 // full name prototype
+// Contact.prototype.fullName = function() {
+//   return this.firstName + " " + this.lastName;
+// };
+
+// unique ogject id
+// Business Logic for AddressBook ---------
+function AddressBook() {
+    this.contacts = {};
+    this.currentId = 0;
+  }
+
+//   prototype tp assign a unique id to each contact
+AddressBook.prototype.assignId = function() {
+    this.currentId += 1;
+    return this.currentId;
+  };
+
+
+  // Business Logic for Contacts ---------
+function Contact(firstName, lastName, phoneNumber) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
+  }
+
+//   fullname prototype
 Contact.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName;
-};
+    return this.firstName + " " + this.lastName;
+  };
