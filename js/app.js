@@ -156,6 +156,7 @@ function AddressBook() {
   // User Interface Logic ---------
   let addressBook = new AddressBook();
   
+//   function to display contact
   function displayContactDetails(addressBookToDisplay) {
     let contactsList = $("ul#contacts");
     let htmlForContactInfo = "";
@@ -169,10 +170,12 @@ function AddressBook() {
 //   function for event bubbling
   function attachContactListeners() {
     $("ul#contacts").on("click", "li", function() {
-      console.log("The id of this <li> is " + this.id + ".");
+      showContact(this.id);
     });
   }
   
+
+//   ui logic
   $(document).ready(function() {
     attachContactListeners();
     $("form#new-contact").submit(function(event) {
