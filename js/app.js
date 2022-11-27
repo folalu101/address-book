@@ -192,9 +192,6 @@ $("#buttons").on("click", ".deleteButton", function() {
   });
   }
 
-
-
-
   
 //   ui logic
   $(document).ready(function() {
@@ -204,6 +201,12 @@ $("#buttons").on("click", ".deleteButton", function() {
       const inputtedFirstName = $("input#new-first-name").val();
       const inputtedLastName = $("input#new-last-name").val();
       const inputtedPhoneNumber = $("input#new-phone-number").val();
+
+    //   to empty form field
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-phone-number").val("");
+    
       let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
       addressBook.addContact(newContact);
       displayContactDetails(addressBook);
