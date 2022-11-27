@@ -184,7 +184,17 @@ function AddressBook() {
     $("ul#contacts").on("click", "li", function() {
       showContact(this.id);
     });
+    //   function to delete contact
+$("#buttons").on("click", ".deleteButton", function() {
+    addressBook.deleteContact(this.id);
+    $("#show-contact").hide();
+    displayContactDetails(addressBook);
+  });
   }
+
+
+
+
   
 //   ui logic
   $(document).ready(function() {
